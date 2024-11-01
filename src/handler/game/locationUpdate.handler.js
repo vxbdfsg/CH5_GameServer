@@ -12,7 +12,7 @@ const locationUpdateHandler = (socket, userId, payload) => {
         //console.log(gameSession);
 
         const user = gameSession.getUser(userId);
-        console.log('유저 아이디 : ', userId);
+        //console.log('유저 아이디 : ', userId);
         if (!user) {
             console.error('User not found');
         }
@@ -20,7 +20,7 @@ const locationUpdateHandler = (socket, userId, payload) => {
         user.updatePosition(x, y);
 
         const locationData = gameSession.getAllLocation(userId);
-        console.log("로케이션 데이타 : ", locationData)
+        //console.log("로케이션 데이타 : ", locationData)
 
         socket.write(locationData);
     } catch (e) {
